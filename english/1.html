@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Hugo 0.108.0" />
+    <title>Pricing example · Bootstrap v5.3</title>
+
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.3/examples/pricing/"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      href="/docs/5.3/assets/img/favicons/apple-touch-icon.png"
+      sizes="180x180"
+    />
+    <link
+      rel="icon"
+      href="/docs/5.3/assets/img/favicons/favicon-32x32.png"
+      sizes="32x32"
+      type="image/png"
+    />
+    <link
+      rel="icon"
+      href="/docs/5.3/assets/img/favicons/favicon-16x16.png"
+      sizes="16x16"
+      type="image/png"
+    />
+    <link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json" />
+    <link
+      rel="mask-icon"
+      href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg"
+      color="#712cf9"
+    />
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico" />
+    <meta name="theme-color" content="#712cf9" />
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, 0.1);
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
+          inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -0.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="../css/pricing.css" rel="stylesheet" />
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <symbol id="check" viewBox="0 0 16 16">
+        <title>Check</title>
+        <path
+          d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
+        />
+      </symbol>
+    </svg>
+
+    <div class="container py-3">
+      <header>
+        <div
+          class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom"
+        >
+          <a
+            href="/"
+            class="d-flex align-items-center text-dark text-decoration-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="32"
+              class="me-2"
+              viewBox="0 0 118 94"
+              role="img"
+            >
+              <title>Bootstrap</title>
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <span class="fs-4">Moteurs de recherche</span>
+          </a>
+        </div>
+
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+          <h1 class="display-4 fw-normal">Master M2I</h1>
+          <p class="fs-5 text-muted">
+            TP Numéro 2 fillière M2I année universitaire 2022-2023
+          </p>
+        </div>
+      </header>
+
+      <main>
+        <div class="row">
+          <div class="col-12 text-center border-top mt-3">
+            <h2 class="mt-3">Impact of Artificial Intelligence on Society</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 text-center mt-3">
+            Artificial intelligence (AI) has had a significant impact on society
+            since its inception. It has transformed industries such as
+            healthcare, finance, and transportation, and has the potential to
+            revolutionize many others. However, like any technology, AI also has
+            its drawbacks and raises important ethical concerns. One of the main
+            benefits of AI is its ability to process and analyze large amounts
+            of data quickly and accurately. This has allowed for the development
+            of personalized medicine, where doctors can use AI algorithms to
+            analyze a patient's medical history and predict potential health
+            issues before they arise. AI has also been used to improve the
+            accuracy of disease diagnosis, detect early signs of cancer, and
+            assist in surgical procedures. In the financial industry, AI has
+            been used to automate trading, identify patterns in financial data,
+            and manage investment portfolios. Self-driving cars, powered by AI,
+            have the potential to reduce the number of accidents caused by human
+            error on the roads. AI-powered virtual assistants, such as Siri and
+            Alexa, have become ubiquitous in households, providing users with
+            personalized information and assistance. However, the use of AI also
+            raises significant ethical concerns. One of the main concerns is the
+            potential for AI to replace human jobs. As AI becomes more advanced,
+            it may be able to perform tasks that were previously done by humans,
+            leading to job loss and economic inequality. There is also the risk
+            that AI algorithms may perpetuate existing biases in society,
+            leading to discrimination against marginalized communities. Another
+            concern is the potential misuse of AI for malicious purposes. AI
+            algorithms can be used to create deepfakes, which are realistic but
+            fake images or videos that can be used to spread false information.
+            AI-powered weapons could also be used to carry out attacks with
+            minimal human involvement, raising concerns about the ethics of
+            autonomous weapons. In conclusion, while AI has the potential to
+            transform society in many positive ways, it is important to consider
+            the potential drawbacks and ethical concerns associated with its
+            use. As AI technology continues to advance, it will be crucial to
+            ensure that it is used ethically and responsibly to ensure that its
+            benefits are maximized while minimizing its potential harms.
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 text-center mt-3">
+            <img src="../images/impact1.jpeg" alt="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 text-center border-top mt-3">
+            <h4 class="mt-3">Challenges to be faced</h4>
+          </div>
+          <div class="col-12 text-center mt-3">
+            The Rise of Autonomous Weapons and Their Ethical Implications
+            The field of artificial intelligence is expanding rapidly, and with it comes the development of autonomous weapons. These weapons are designed to operate independently, without any human intervention, and they have the potential to revolutionize warfare. However, this development also raises ethical questions that must be addressed.
+            The idea of autonomous weapons has been around for decades, but recent advances in AI have made them more feasible. These weapons are capable of making decisions based on real-time data, allowing them to adapt to changing situations in ways that humans cannot. This makes them attractive to military planners, who see them as a way to reduce casualties and increase the effectiveness of their forces.
+            However, the use of autonomous weapons raises a number of ethical concerns. One of the biggest concerns is the potential for these weapons to cause unintended harm. If an autonomous weapon makes a mistake, there may be no way to hold anyone accountable for the resulting damage. This could lead to a situation where innocent civilians are killed or injured without any clear legal or moral responsibility. 
+            Another concern is the potential for these weapons to be hacked or otherwise compromised. If an adversary gains control of an autonomous weapon, it could be used to cause harm to innocent people or to carry out attacks that would otherwise be illegal or unethical. This raises questions about the security of these weapons and the potential risks they pose to society.
+            Finally, there is the question of whether the use of autonomous weapons is morally justifiable. Some argue that these weapons are inherently immoral because they remove human decision-making from the equation. Others argue that they are necessary for national security and that their use can be justified in certain situations.
+            As the development of autonomous weapons continues, it is important to address these ethical questions head-on. Governments, military leaders, and researchers must work together to develop clear guidelines for the use of these weapons and to ensure that they are deployed in a responsible and ethical manner. Only by doing so can we ensure that the benefits of AI are maximized while minimizing the risks and negative consequences.
+          </div>
+          <div class="col-12 text-center mt-3">
+              <img src="../images/impact3.avif" alt="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 text-center border-top mt-3">
+            <h4 class="mt-3">Positive Impacts of Artificial Intelligence on Society</h4>
+          </div>
+          <div class="col-12 text-center mt-3">
+            Artificial intelligence is transforming the world of education by providing innovative ways to teach, learn and assess student progress. With the use of AI, it is now possible to provide personalised and adaptive learning experiences, which are tailored to individual needs and preferences. This can help students to learn at their own pace, in a way that suits them best, and can greatly improve learning outcomes.
+
+            AI-powered virtual tutors and chatbots can offer support to students, answering questions and providing feedback in real-time. This not only saves time for educators but also helps students to gain a deeper understanding of the material they are studying. Additionally, AI can be used to track student progress and identify areas where additional support or resources may be needed.
+
+            One of the most significant impacts of AI on education is in the field of online learning. The COVID-19 pandemic has accelerated the growth of online learning, and AI has played a crucial role in making it more effective and accessible. AI-powered platforms can help to automate administrative tasks, such as grading and scheduling, freeing up time for educators to focus on teaching and providing support to students.
+
+            Another area where AI is making an impact is in the development of intelligent educational content. AI can be used to create interactive and engaging learning materials, such as simulations and games, that are designed to keep students engaged and motivated. These materials can also be personalised to match the individual learning style of each student.
+
+            While there are many benefits to using AI in education, there are also potential challenges that need to be addressed. One of the most significant concerns is the potential for bias in AI algorithms, which could lead to unequal treatment of students. It is important to ensure that AI is used in a responsible and ethical way, with appropriate safeguards in place to prevent bias and protect student privacy.
+
+            In conclusion, the use of AI in education has the potential to revolutionise the way we teach and learn. With the ability to provide personalised and adaptive learning experiences, as well as automate administrative tasks and develop intelligent educational content, AI can greatly improve learning outcomes and make education more accessible and effective for all.
+          </div>
+          <div class="col-12 text-center mt-3">
+              <img src="../images/impact2.jpg" alt="">
+          </div>
+        </div>
+        
+        
+      </main>
+
+      <!-- footer -->
+      <footer class="pt-4 my-md-5 pt-md-5 border-top text-center">
+        <div class="row">
+          <div class="col-12 col-md">
+            <small class="d-block mb-3 text-muted"
+              >&copy; Master (M2i) - 2023</small
+            >
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

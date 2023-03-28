@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /arabic/1.html
+Disallow: /english/2.html

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Hugo 0.108.0" />
+    <title>Pricing example · Bootstrap v5.3</title>
+
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.3/examples/pricing/"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      href="/docs/5.3/assets/img/favicons/apple-touch-icon.png"
+      sizes="180x180"
+    />
+    <link
+      rel="icon"
+      href="/docs/5.3/assets/img/favicons/favicon-32x32.png"
+      sizes="32x32"
+      type="image/png"
+    />
+    <link
+      rel="icon"
+      href="/docs/5.3/assets/img/favicons/favicon-16x16.png"
+      sizes="16x16"
+      type="image/png"
+    />
+    <link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json" />
+    <link
+      rel="mask-icon"
+      href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg"
+      color="#712cf9"
+    />
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico" />
+    <meta name="theme-color" content="#712cf9" />
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, 0.1);
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
+          inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -0.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="../css/pricing.css" rel="stylesheet" />
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <symbol id="check" viewBox="0 0 16 16">
+        <title>Check</title>
+        <path
+          d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
+        />
+      </symbol>
+    </svg>
+
+    <div class="container py-3">
+      <header>
+        <div
+          class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom"
+        >
+          <a
+            href="/"
+            class="d-flex align-items-center text-dark text-decoration-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="32"
+              class="me-2"
+              viewBox="0 0 118 94"
+              role="img"
+            >
+              <title>Bootstrap</title>
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <span class="fs-4">Moteurs de recherche</span>
+          </a>
+        </div>
+
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+          <h1 class="display-4 fw-normal">Master M2I</h1>
+          <p class="fs-5 text-muted">
+            TP Numéro 2 fillière M2I année universitaire 2022-2023
+          </p>
+        </div>
+      </header>
+
+      <main>
+        <div class="row">
+          <div class="col-12 text-center border-top mt-3">
+            <h2 class="mt-3">Big Data</h2>
+          </div>
+        </div>
+        <div class="row">
+          <img src="../images/big.jpg" alt="">
+        </div>
+        <div class="row">
+          <div class="col-12 text-center mt-3">
+            Big data is a term used to describe extremely large sets of data
+            that can be analyzed to reveal patterns, trends, and associations.
+            With the explosion of digital information in recent years, big data
+            has become increasingly prevalent in virtually every aspect of
+            modern society, from business and government to healthcare and
+            education. One of the key characteristics of big data is its size.
+            Traditional data management tools and methods are often inadequate
+            for dealing with the massive amounts of data generated by modern
+            technology. Big data requires sophisticated tools and techniques for
+            data storage, retrieval, and analysis, including distributed
+            computing, data mining, and machine learning. Another important
+            characteristic of big data is its diversity. Big data comes from a
+            wide range of sources, including social media, mobile devices,
+            sensors, and other digital technologies. This diverse range of data
+            types presents unique challenges for data analysis, as different
+            types of data require different analytical methods. Despite the
+            challenges, big data has the potential to transform virtually every
+            industry. In the business world, big data can be used to gain
+            insights into consumer behavior and preferences, enabling companies
+            to make better decisions about product development, marketing, and
+            customer service. In healthcare, big data can be used to develop
+            personalized treatment plans based on individual patient data,
+            improving patient outcomes and reducing healthcare costs. Big data
+            can also be used to address some of the world's most pressing
+            problems. For example, big data can be used to predict and prevent
+            natural disasters, improve urban planning and transportation
+            systems, and monitor and respond to climate change. However, there
+            are also concerns about the ethical implications of big data. The
+            collection and analysis of large amounts of data can raise privacy
+            concerns, as individuals may not be aware of the data that is being
+            collected about them or how it is being used. There are also
+            concerns about the potential for bias in big data analysis, which
+            could lead to unfair or discriminatory outcomes. In conclusion, big
+            data has the potential to transform virtually every aspect of modern
+            society, from business and healthcare to education and social
+            policy. However, the challenges of managing and analyzing large and
+            diverse sets of data must be addressed, and ethical considerations
+            must be taken into account to ensure that the benefits of big data
+            are realized in a responsible and ethical manner.
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 text-center border-top mt-3">
+            <h2 class="mt-3"> What is Big Data Analytics?
+            </h2>
+          </div>
+        </div>
+        <div class="row">
+          <img src="../images/big1.png" alt="">
+        </div>
+        <div class="row">
+          <div class="col-12 text-center mt-3">
+            Big Data analytics is a process used to extract meaningful insights, 
+            such as hidden patterns, unknown correlations, market trends, and customer preferences. 
+            Big Data analytics provides various advantages—it can be used for better decision making,
+             preventing fraudulent activities, among other things.
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 text-center border-top mt-3">
+            <h4 class="mt-3">Why is big data analytics important?
+            </h4>
+          </div>
+        </div>
+        <div class="row">
+          <img src="../images/big2.jpg" alt="">
+        </div>
+        <div class="row">
+          <div class="col-12 text-center mt-3">
+            In today’s world, Big Data analytics is fueling everything we do online—in every industry.
+
+            Take the music streaming platform Spotify for example. The company has nearly 96 million users that generate a tremendous amount of data every day. Through this information, the cloud-based platform automatically generates suggested songs—through a smart recommendation engine—based on likes, shares, search history, and more. What enables this is the techniques, tools, and frameworks that are a result of Big Data analytics.
+
+            If you are a Spotify user, then you must have come across the top recommendation section, which is based on your likes, past history, and other things. Utilizing a recommendation engine that leverages data filtering tools that collect data and then filter it using algorithms works. This is what Spotify does.
+
+            But, let’s get back to the basics first.
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 text-center border-top mt-3">
+            <h4 class="mt-3">
+              What is Big Data?
+            </h4>
+          </div>
+        </div>
+        <div class="row">
+          <img src="../images/big3.jpg" alt="">
+        </div>
+        <div class="row">
+          <div class="col-12 text-center mt-3">
+            Big Data is a massive amount of data sets that cannot be stored, processed, or analyzed using traditional tools. 
+
+            Today, there are millions of data sources that generate data at a very rapid rate. These data sources are present across the world. Some of the largest sources of data are social media platforms and networks. Let’s use Facebook as an example—it generates more than 500 terabytes of data every day. This data includes pictures, videos, messages, and more. 
+
+            Data also exists in different formats, like structured data, semi-structured data, and unstructured data. For example, in a regular Excel sheet, data is classified as structured data—with a definite format. In contrast, emails fall under semi-structured, and your pictures and videos fall under unstructured data. All this data combined makes up Big Data. 
+
+            Let’s look into the four advantages of Big Data analytics.
+
+            Also Read: Data Science vs. Big Data vs. Data Analytics
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 text-center border-top mt-3">
+            <h4 class="mt-3">
+              Uses and Examples of Big Data Analytics
+            </h4>
+          </div>
+        </div>
+        <div class="row">
+          <img src="../images/big4.jpg" alt="">
+        </div>
+        <div class="row">
+          <div class="col-12 text-center mt-3">
+            There are many different ways that Big Data analytics can be used in order to improve businesses and organizations. Here are some examples:
+            Using analytics to understand customer behavior in order to optimize the customer experience
+            Predicting future trends in order to make better business decisions
+            Improving marketing campaigns by understanding what works and what doesn't
+            Increasing operational efficiency by understanding where bottlenecks are and how to fix them
+            Detecting fraud and other forms of misuse sooner
+            These are just a few examples — the possibilities are really endless when it comes to Big Data analytics. It all depends on how you want to use it in order to improve your business.
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 text-center border-top mt-3">
+            <h4 class="mt-3">
+              History of Big Data Analytics
+            </h4>
+          </div>
+        </div>
+        <div class="row">
+          <img src="../images/big5.jpg" alt="">
+        </div>
+        <div class="row">
+          <div class="col-12 text-center mt-3">
+            The history of Big Data analytics can be traced back to the early days of computing, when organizations first began using computers to store and analyze large amounts of data. However, it was not until the late 1990s and early 2000s that Big Data analytics really began to take off, as organizations increasingly turned to computers to help them make sense of the rapidly growing volumes of data being generated by their businesses.
+
+            Today, Big Data analytics has become an essential tool for organizations of all sizes across a wide range of industries. By harnessing the power of Big Data, organizations are able to gain insights into their customers, their businesses, and the world around them that were simply not possible before.
+
+            As the field of Big Data analytics continues to evolve, we can expect to see even more amazing and transformative applications of this technology in the years to come.
+
+            Read More: Fascinated by Data Science, software alum Aditya Shivam wanted to look for new possibilities of learning and then gradually transitioning in to the data field. Read about Shivam’s journey with our Big Data Engineer Master’s Program, in his Simplilearn Big Data Engineer Review.
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 text-center border-top mt-3">
+            <h4 class="mt-3">
+              Benefits and Advantages of Big Data Analytics
+            </h4>
+          </div>
+        </div>
+        <div class="row">
+          <img src="../images/big6.jpg" alt="">
+        </div>
+        <div class="row">
+          <div class="col-12 text-center mt-3">
+            <h5>1. Risk Management </h5>
+                Use Case: Banco de Oro, a Phillippine banking company, uses Big Data analytics to identify fraudulent activities and discrepancies. The organization leverages it to narrow down a list of suspects or root causes of problems. 
+            <h5>2. Product Development and Innovations
+            </h5>
+                Use Case: Rolls-Royce, one of the largest manufacturers of jet engines for airlines and armed forces across the globe, uses Big Data analytics to analyze how efficient the engine designs are and if there is any need for improvements. 
+            <h5>3. Quicker and Better Decision Making Within Organizations
+            </h5>
+                Use Case: Starbucks uses Big Data analytics to make strategic decisions. For example, the company leverages it to decide if a particular location would be suitable for a new outlet or not. They will analyze several different factors, such as population, demographics, accessibility of the location, and more.
+            <h5>4. Improve Customer Experience
+            </h5>
+                 Use Case: Delta Air Lines uses Big Data analysis to improve customer experiences. They monitor tweets to find out their customers’ experience regarding their journeys, delays, and so on. The airline identifies negative tweets and does what’s necessary to remedy the situation. By publicly addressing these issues and offering solutions, it helps the airline build good customer relations.
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 text-center border-top mt-3">
+            <h4 class="mt-3">
+              The Lifecycle Phases of Big Data Analytics
+            </h4>
+          </div>
+        </div>
+        <div class="row">
+          <img src="../images/big7.jpg" alt="">
+        </div>
+        <div class="row">
+          <div class="col-12 text-center mt-3">
+            Now, let’s review how Big Data analytics works:
+            Stage 1 - Business case evaluation - The Big Data analytics lifecycle begins with a business case, which defines the reason and goal behind the analysis.
+            Stage 2 - Identification of data - Here, a broad variety of data sources are identified.
+            Stage 3 - Data filtering - All of the identified data from the previous stage is filtered here to remove corrupt data.
+            Stage 4 - Data extraction - Data that is not compatible with the tool is extracted and then transformed into a compatible form.
+            Stage 5 - Data aggregation - In this stage, data with the same fields across different datasets are integrated.
+            Stage 6 - Data analysis - Data is evaluated using analytical and statistical tools to discover useful information.
+            Stage 7 - Visualization of data - With tools like Tableau, Power BI, and QlikView, Big Data analysts can produce graphic visualizations of the analysis.
+            Stage 8 - Final analysis result - This is the last step of the Big Data analytics lifecycle, where the final results of the analysis are made available to business stakeholders who will take action.
+          </div>
+        </div>
+
+      </main>
+
+      <!-- footer -->
+      <footer class="pt-4 my-md-5 pt-md-5 border-top text-center">
+        <div class="row">
+          <div class="col-12 col-md">
+            <small class="d-block mb-3 text-muted"
+              >&copy; Master (M2i) - 2023</small
+            >
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Hugo 0.108.0" />
+    <title>Pricing example · Bootstrap v5.3</title>
+
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.3/examples/pricing/"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      href="/docs/5.3/assets/img/favicons/apple-touch-icon.png"
+      sizes="180x180"
+    />
+    <link
+      rel="icon"
+      href="/docs/5.3/assets/img/favicons/favicon-32x32.png"
+      sizes="32x32"
+      type="image/png"
+    />
+    <link
+      rel="icon"
+      href="/docs/5.3/assets/img/favicons/favicon-16x16.png"
+      sizes="16x16"
+      type="image/png"
+    />
+    <link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json" />
+    <link
+      rel="mask-icon"
+      href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg"
+      color="#712cf9"
+    />
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico" />
+    <meta name="theme-color" content="#712cf9" />
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, 0.1);
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
+          inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -0.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="../css/pricing.css" rel="stylesheet" />
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <symbol id="check" viewBox="0 0 16 16">
+        <title>Check</title>
+        <path
+          d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
+        />
+      </symbol>
+    </svg>
+
+    <div class="container py-3">
+      <header>
+        <div
+          class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom"
+        >
+          <a
+            href="/"
+            class="d-flex align-items-center text-dark text-decoration-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="32"
+              class="me-2"
+              viewBox="0 0 118 94"
+              role="img"
+            >
+              <title>Bootstrap</title>
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            <span class="fs-4">Moteurs de recherche</span>
+          </a>
+        </div>
+
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+          <h1 class="display-4 fw-normal">Master M2I</h1>
+          <p class="fs-5 text-muted">
+            TP Numéro 2 fillière M2I année universitaire 2022-2023
+          </p>
+        </div>
+      </header>
+
+      <main>
+        <div class="row">
+          <div class="col-12 text-center border-top mt-3">
+            <h2 class="mt-3">
+              The Importance of Cybersecurity in the Digital Age
+            </h2>
+          </div>
+        </div>
+        <div class="row">
+          <img src="../images/cyber.jpg" alt="">
+        </div>
+        <div class="row">
+          <div class="col-12 text-center mt-3">
+            the digital age, cybersecurity has become a critical concern for
+            individuals, businesses, and governments around the world. With the
+            growing number of cyber threats such as data breaches, phishing
+            attacks, and malware infections, it is essential to have robust
+            cybersecurity measures in place to protect against these threats.
+            The importance of cybersecurity lies in the fact that it helps to
+            safeguard sensitive data and prevent unauthorized access to critical
+            systems and networks. In today's world, data is a valuable asset,
+            and businesses and governments rely heavily on the security of their
+            data to maintain their operations and competitive edge.
+            Cybersecurity helps to ensure that data is protected from theft,
+            tampering, or loss, which can have severe consequences.
+            Cybersecurity is also essential to maintain the integrity and
+            availability of critical systems and networks. In many cases, cyber
+            attacks are not just aimed at stealing data, but also disrupting
+            operations or causing damage to infrastructure. Cybersecurity
+            measures can help to detect and prevent these attacks, preventing
+            significant disruptions and damages. The importance of cybersecurity
+            is not just limited to businesses and governments but also extends
+            to individuals. In today's world, we rely heavily on technology for
+            communication, financial transactions, and other activities.
+            Cybersecurity helps to protect our personal information from theft
+            and misuse, preventing identity theft and financial fraud. The
+            growing importance of cybersecurity has led to the development of a
+            wide range of cybersecurity tools and technologies, such as
+            firewalls, antivirus software, intrusion detection systems, and
+            encryption algorithms. However, despite these advances,
+            cybersecurity threats continue to evolve and become more
+            sophisticated, making it essential to remain vigilant and proactive
+            in the fight against cyber threats. In conclusion, cybersecurity is
+            critical in the digital age, and it is essential to have robust
+            cybersecurity measures in place to protect against cyber threats.
+            The importance of cybersecurity extends beyond businesses and
+            governments to individuals, and it is essential to remain aware of
+            the risks and take appropriate steps to protect ourselves and our
+            data. By staying informed and proactive, we can help to create a
+            safer and more secure digital world.
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-12 text-center border-top mt-3">
+            <h4 class="mt-3">
+              1. Why is Cyber Security Important?
+            </h4>
+          </div>
+        </div>
+        <div class="row">
+          <img src="../images/cyber2.jpeg" alt="">
+        </div>
+        <div class="row">
+          <div class="col-12 text-center mt-3">
+            One of the biggest reasons why cybersecurity is so essential is because it protects sensitive data against theft
+             and loss. With the increasing reliance on technology, everything from personal information to critical infrastructure 
+             is at risk of being compromised by cybercriminals. Sensitive data, such as protected health information (PHI), personally 
+             identifiable information (PII), intellectual property, personal information, data, and government and business information 
+             systems are all included. Without proper cybersecurity measures in place, this data is vulnerable to cyber threats, 
+             which can result in identity theft, financial fraud, and reputational damage. It's crucial for cybersecurity specialists 
+             to work tirelessly
+             to prevent these types of attacks and protect sensitive information from falling into the wrong hands.
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-12 text-center border-top mt-3">
+            <h4 class="mt-3">
+              2. What are the Challenges of Cyber Security?
+            </h4>
+          </div>
+        </div>
+        <div class="row">
+          <img src="../images/cyber3.jpg" alt="">
+        </div>
+        <div class="row">
+          <div class="col-12 text-center mt-3">
+            Artificial intelligence is rapidly becoming a crucial component of modern technology, but its development is not without
+             challenges. One of the most significant issues is the potential for bias in AI systems.
+            If the data sets used to train an AI model are biased, the model will also be biased, which could have serious
+            consequences for the individuals or groups affected by the system's decisions. Additionally, the increasing 
+            sophistication of AI also raises concerns about the potential for autonomous systems to make decisions that go against
+            ethical or moral principles. As AI becomes more integrated into our daily lives, it is crucial to ensure that 
+            the technology is developed and implemented in a responsible and ethical manner to avoid harmful outcomes.
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 text-center border-top mt-3">
+            <h4 class="mt-3">
+              3. How to Manage Cyber Security
+            </h4>
+          </div>
+        </div>
+        <div class="row">
+          <img src="../images/cyber4.png" alt="">
+        </div>
+        <div class="row">
+          <div class="col-12 text-center mt-3">
+            Cyber security is a critical concern for individuals and businesses alike.
+            To ensure that your digital assets remain secure, it is essential to adopt a proactive approach to cyber security. 
+            One of the most effective ways to do this is by maintaining the latest version of your software. Additionally, 
+            using anti-virus software and a firewall can help protect your devices against malware and other cyber threats. 
+            It's also crucial to utilize strong passwords and a password management tool to keep your accounts safe.
+            Consider adopting two-factor or multi-factor authentication for an additional layer of security. Finally, 
+            it's important to be aware of phishing scams and to exercise caution when receiving unsolicited emails, phone calls, 
+            or pamphlets. By implementing these best practices, you can take a proactive approach to cyber security and safeguard
+            your digital assets against potential threats.
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 text-center border-top mt-3">
+            <h4 class="mt-3">
+              4. What does cybersecurity mean for your business?
+            </h4>
+          </div>
+        </div>
+        <div class="row">
+          <img src="../images/cyber5.jpg" alt="">
+        </div>
+        <div class="row">
+          <div class="col-12 text-center mt-3">
+            In today's digital age, security measures play a crucial role in safeguarding various electronic systems and networks
+            from malicious attacks, illegal access, and improper use. Whether you operate a business or use personal devices, 
+            it is imperative to take proactive steps towards cybersecurity to keep your data protected from potential hackers. 
+            One of the most effective ways to achieve this is by utilizing anti-malware and antivirus protection software, 
+            which can help keep dangerous actors out of your machine. By implementing strong security measures, you can significantly
+            reduce the risk of cyber-attacks and safeguard your digital assets against potential threats.
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 text-center border-top mt-3">
+            <h4 class="mt-3">
+              5. What are the 5 types of cyber security?
+            </h4>
+          </div>
+        </div>
+        <div class="row">
+          <img src="../images/cyber6.jpg" alt="">
+        </div>
+        <div class="row">
+          <div class="col-12 text-center mt-3">
+            Cybersecurity is a vital aspect of modern-day digital operations, and there are various types of cybersecurity
+            measures that one can undertake to protect their devices and networks from potential threats. 
+            The five main types of cybersecurity are application security, critical infrastructure security, 
+            network security, Internet of Things (IoT) security, and cloud security. Application security involves securing 
+            applications from potential threats and ensuring that they operate as intended. Critical infrastructure security 
+            aims to protect the critical infrastructure and systems that are essential to the functioning of society.
+             Network security involves securing networks and their components against potential threats such as malware, viruses, 
+             and unauthorized access. IoT security aims to secure IoT devices and systems from potential cyber-attacks, while cloud security involves protecting cloud computing systems from cyber threats and ensuring the confidentiality, integrity, and availability of data stored in the cloud. By implementing robust cybersecurity measures across all these areas, individuals and businesses can significantly reduce the risk of cyber-attacks and protect their digital assets from potential threats.
+          </div>
+        </div>
+
+      </main>
+
+      <!-- footer -->
+      <footer class="pt-4 my-md-5 pt-md-5 border-top text-center">
+        <div class="row">
+          <div class="col-12 col-md">
+            <small class="d-block mb-3 text-muted"
+              >&copy; Master (M2i) - 2023</small
+            >
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
