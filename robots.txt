@@ -1,5 +1,4 @@
-User-agent: *
-Disallow: /arabic/1.html
-Disallow: /english/2.html
+User-agent:*
+Disallow:/arabic/1.html
+Disallow:/english/2.html
 
-Sitemap: https://m2i-seo-project.netlify.app/sitemap.xml
